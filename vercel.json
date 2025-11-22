@@ -1,0 +1,10 @@
+{
+  "builds": [
+    { "src": "client/src/main.tsx", "use": "@vercel/static-build" },
+    { "src": "server/index-prod.ts", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/analyze", "dest": "server/index-prod.ts" },
+    { "src": "/(.*)", "dest": "client/src/main.tsx" }
+  ]
+}
